@@ -380,7 +380,7 @@ def run_full_scenario(metro, scenario):
     runScenario(metro,scenario)
 
 if __name__ == "__main__":
-    scenarioList = ['00','01','01M','02','02B','02BM','02M','03','04','04B','04BM','05','05B','A','AA','asianG','BBCC','BC','D','DM','esport','FIFA','megaSport','megaSportM','Olympics','OlympicsT','Opening','OpeningM']
+    scenarioList = ['00','01','01M','02','02B','02BM','02M','03','04','04B','04BM','05','05B','A','AA','asianG','BBCC','BC','D','DM','esport','FIFA','megaSport','megaSportM','Olympics','OlympicsT','Opening','OpeningM','OpeningS1','OpeningS1M','OpeningS2','OpeningS1M','OpeningS3','OpeningS2M']
     # scenarioList = ['04B']
     metroList = ['pre','post']
     # metroList = ['pre']
