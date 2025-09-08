@@ -253,7 +253,7 @@ def runScenario(metro,scenario):
 # Get headers from one of the inner dictionaries
     fieldnames = ['time'] + list(next(iter(nodeOccupancies.values())).keys())
 
-    with open(f'UptownOutputs/{metro}/roadCalcs_OccupancyOutput_{scenario}.csv', 'w', newline='') as csvfile:
+    with open(f'UptownOutputs/parallelComp/{metro}/roadCalcs_OccupancyOutput_{scenario}.csv', 'w', newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for time, node_values in nodeOccupancies.items():
@@ -261,7 +261,7 @@ def runScenario(metro,scenario):
             row.update(node_values)
             writer.writerow(row)
 
-    with open(f'UptownOutputs/{metro}/roadCalcs_PeopleCountOutput_{scenario}.csv', 'w', newline='') as csvfile:
+    with open(f'UptownOutputs/parallelComp/{metro}/roadCalcs_PeopleCountOutput_{scenario}.csv', 'w', newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for time, node_values in nodePeopleCount.items():
@@ -269,14 +269,14 @@ def runScenario(metro,scenario):
             row.update(node_values)
             writer.writerow(row)
 
-    with open(f'UptownOutputs/{metro}/roadCalcs_FlowRateOutput_{scenario}.csv', 'w', newline='') as csvfile:
+    with open(f'UptownOutputs/parallelComp/{metro}/roadCalcs_FlowRateOutput_{scenario}.csv', 'w', newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for time, node_values in nodeFlowRate.items():
             row = {'time': time}
             row.update(node_values)
             writer.writerow(row)
-    with open(f'UptownOutputs/{metro}/roadCalcs_WidthFlowRequiredOutput_{scenario}.csv', 'w', newline='') as csvfile:
+    with open(f'UptownOutputs/parallelComp/{metro}/roadCalcs_WidthFlowRequiredOutput_{scenario}.csv', 'w', newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for time, node_values in nodeWidthFlowRequired.items():
