@@ -4,3 +4,5 @@
 UptownOutputs/.DS_Store
 .DS_Store
 .DS_Store
+!/RiseTowerInputs
+!/RiseTowerInputs/*.csv

@@ -1,0 +1,12 @@
+liftName,liftSpeed,liftCapacity,liftGroup
+Lift A,2.5,20,Group 1
+Lift B,3.0,15,Group 2
+Lift C,4.0,10,Group 2
+Lift D,2.0,25,Group 3
+Lift E,3.5,30,Group 3
+Lift F,2.8,18,Group 4
+Lift G,3.2,22,Group 4
+Lift H,4.5,12,Group 5
+Lift I,2.3,28,Group 5
+Lift J,3.8,16,Group 6
+Lift K,2.7,24,Group 6
