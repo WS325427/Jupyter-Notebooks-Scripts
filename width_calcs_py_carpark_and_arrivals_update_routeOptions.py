@@ -90,7 +90,12 @@ def readArrivalTime(scenario):
                 'population': population,
                 'time': time
             }
-
+def pctFormatter(pct):
+    try:
+        return abs(float(pct))
+    except:
+        return abs(float(str(pct.split('%')[0])))/100
+    
 def readArrivalDepartureProfile(scenario):
 #arrival profile
     with open(f'UptownInputs/roadCalcs_arrivalProfile_departures_{scenario}.csv', 'r') as csvfile:
@@ -99,18 +104,12 @@ def readArrivalDepartureProfile(scenario):
         headers = data[0]
         arrivalData = data[1:]
 
-        def pctFormatter(pct):
-            try:
-                return abs(float(pct))
-            except:
-                return abs(float(str(pct.split('%')[0])))/100
-
         for row in arrivalData:
             profileId = row[0]
             timeProfile = row[2:]
             departuresProfile[profileId] = {}
             for idx,pct in enumerate(timeProfile):
-                departuresProfile[profileId][(idx*3600)] = 0 if pct == '' else pctFormatter(pct)
+                departuresProfile[profileId][(idx*3600)] = 0 if (pct == '' or '-' in pct) else pctFormatter(pct)
 
 
 def readArrivalArrivalProfile(scenario):
@@ -121,18 +120,14 @@ def readArrivalArrivalProfile(scenario):
         headers = data[0]
         arrivalData = data[1:]
 
-        def pctFormatter(pct):
-            try:
-                return abs(float(pct))
-            except:
-                return abs(float(str(pct.split('%')[0])))/100
+
 
         for row in arrivalData:
             profileId = row[0]
             timeProfile = row[2:]
             arrivalProfile[profileId] = {}
             for idx,pct in enumerate(timeProfile):
-                arrivalProfile[profileId][(idx*3600)] = 0 if pct == '' else pctFormatter(pct)
+                arrivalProfile[profileId][(idx*3600)] = 0 if (pct == '' or '-' in pct) else pctFormatter(pct)
 
 def removeCarparkPopulationFromArrivalTime():
     groupTotal = {}
